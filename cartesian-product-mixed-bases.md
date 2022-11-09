@@ -4,9 +4,9 @@ The other week, a work-related problem got me thinking about the [Cartesian Prod
 
 ## Example
 Consider a practical, if contrived, example: suppose I want to see how many outfits I can make out of the shoes, pants, and shirts I have. In real life, I'd _never_ do this with my wardrobe, because I don't actually care how many possible outfits I have 😄. Anyways, let's say I have a set of $3$ t-shirts, $2$ pairs of pants, and $2$ pairs of shoes. Let's represent these different items as sets:
-- Call the set of t-shirts $T$. Then we have $T = \{\text{\text{red-shirt}}, \text{green-shirt}, \text{black-shirt}\}$
-- Call the set of pants $P$. Then we have $P = \{\text{denim-pants}, \text{corduroy-pants}\}$
-- Call the set of shoes $S$. Then we have $S = \{\text{running-shoes}, \text{dress-shoes}\}$
+- Call the set of t-shirts $T$. Then we have $T = \set{\mathsf{red_{shirt}}, \mathsf{green_{shirt}}, \mathsf{black_{shirt}} }$
+- Call the set of pants $P$. Then we have $P = \set{\mathsf{denim_{pants}}, \mathsf{corduroy_{pants}} }$
+- Call the set of shoes $S$. Then we have $S = \set{\mathsf{running_{shoes}}, \mathsf{dress_{shoes}} }$
 
 The set of all possible outfits is the Cartesian Product, denoted as $T \times P \times S$.
 
@@ -28,21 +28,22 @@ This approach works fine when the number of sets is small and thus, easy to expl
 
 Nonetheless, executing this algorithm yields:
 
+{
+$( \mathsf{red_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{red_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{dress_{shoes}} ),$
+$( \mathsf{red_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{red_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{dress_{shoes}} ),$
 
-$\{\\$
-	$\qquad  ( \text{red-shirt},\space \text{denim-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{red-shirt},\space \text{denim-pants},\space \text{dress-shoes} ),\\$
-	$\qquad ( \text{red-shirt},\space \text{corduroy-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{red-shirt},\space \text{corduroy-pants},\space \text{dress-shoes} ),\\$
-	$\qquad ( \text{green-shirt},\space \text{denim-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{green-shirt},\space \text{denim-pants},\space \text{dress-shoes} ),\\$
-	$\qquad ( \text{green-shirt},\space \text{corduroy-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{green-shirt},\space \text{corduroy-pants},\space \text{dress-shoes} ),\\$
-	$\qquad ( \text{black-shirt},\space \text{denim-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{black-shirt},\space \text{denim-pants},\space \text{dress-shoes} ),\\$
-	$\qquad ( \text{black-shirt},\space \text{corduroy-pants},\space \text{running-shoes} ),\\$
-	$\qquad ( \text{black-shirt},\space \text{corduroy-pants},\space \text{dress-shoes} )\\$
-$\}$
+$( \mathsf{green_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{green_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{dress_{shoes}} ),$
+$( \mathsf{green_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{green_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{dress_{shoes}} ),$
+
+$( \mathsf{black_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{black_{shirt}},\space \mathsf{denim_{pants}},\space \mathsf{dress_{shoes}} ),$
+$( \mathsf{black_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{running_{shoes}} ),$
+$( \mathsf{black_{shirt}},\space \mathsf{corduroy_{pants}},\space \mathsf{dress_{shoes}} )$
+}
 
 ## Another Approach: Using Mixed-Base Numbers
 A [mixed-radix number](https://en.wikipedia.org/wiki/Mixed_radix), also sometimes called a mixed-base number, is a number in which the values at each position can vary in terms of their bases. Let's compare mixed-based numbers with decimal numbers.
@@ -69,33 +70,37 @@ With these 4 pieces of information, we know enough to compute the Cartesian prod
 
 Let's create a mixed-based number, $N$, consisting of $j$ digits. Then, $N = d1|d2|d3$. Now, let $d1$'s base correspond to the cardinality of $T$, so that $d1$ is a base-3 number. Then, do the same with $d2$ and $P$, so $d2$ is base-2. Finally, do the same with $d3$ and $S$, so $d3$ is in base-2. Initialize $N$ to the "zero" value, so that $N = 0_{3}|0_{2}|0_{2}$.
 
-Given the previous correspondence of $d1$ to $T$, $d2$ to $P$, and $d3$ to $S$, maybe the values of these digits also have some relation to their corresponding sets? In this case, let's treat them as indices into arrays backing each set. So, given $S = \{ \text{running-shoes}, \text{dress-shoes} \}$, we can let $S' = [ \text{running-shoes}, \text{dress-shoes} ]$ be the underlying array representing the set. Then, $d3 = 0$ corresponds to a reference to the $0$-index element of $S'$ (i.e. $S'[0]$). 
+Given the previous correspondence of $d1$ to $T$, $d2$ to $P$, and $d3$ to $S$, maybe the values of these digits also have some relation to their corresponding sets? In this case, let's treat them as indices into arrays backing each set. So, given $S = \set{ \mathsf{running_{shoes}}, \mathsf{dress_{shoes}} }$, we can let $S' = [ \mathsf{running_{shoes}}, \mathsf{dress_{shoes}} ]$ be the underlying array representing the set. Then, $d3 = 0$ corresponds to a reference to the $0$-index element of $S'$ (i.e. $S'[0]$).
 
 Extending these correspondences to all digits, for $N = 0_{3}|0_{2}|0_{2}$, we have:
-- $d1 = 0 \rightarrow T'[0] = \text{red-shirt}$
-- $d2 = 0 \rightarrow P'[0] = \text{denim-pants}$
-- $d3 = 0 \rightarrow S'[0] = \text{running-shoes}$
+- $d1 = 0 \rightarrow T'[0] = \mathsf{red_{shirt}}$
+- $d2 = 0 \rightarrow P'[0] = \mathsf{denim_{pants}}$
+- $d3 = 0 \rightarrow S'[0] = \mathsf{running_{shoes}}$
 
-Notice that the set comprised of these items, $\{ T'[0], P'[0], S'[0] \} = \{ \text{red-shirt}, \text{denim-pants}, \text{running-shoes} \}$, is also the first element of the Cartesian product we computed above!
+Notice that the set comprised of these items, $\set{ T'[0], P'[0], S'[0] } = \set{ \mathsf{red_{shirt}}, \mathsf{denim_{pants}}, \mathsf{running_{shoes}} }$, is also the first element of the Cartesian product we computed above!
 
 ### Counting
 
 With this first example, you may begin to see where this is going: we can increment $N$ by $1$, and each digit of the sum provides an index into the array backing that digit's corresponding set! Requiring $N$ be a mixed-base number enables us to account for the varying cardinalities of each set. Adding $1$ to $N$ -- and carrying as required for each respective base -- effectively enables us to automatically fix and vary different elements of each set like we did in the initial example. If we take a sum and add each of its digits to a tuple, creating a new tuple for each sum, we'll find that the results of adding $1$ to $N$ each time create a lexicographic ordering of the tuples. In other words:
 
-
-$N = 0_{3}|0_{2}|0_{2} \rightarrow (0, 0, 0)\\$
-$N + 1 = 0_{3}|0_{2}|1_{2} \rightarrow (0, 0, 1)\\$
-$N + 2 = 0_{3}|1_{2}|0_{2} \rightarrow (0, 1, 0)\\$
-$N + 3 = 0_{3}|1_{2}|1_{2} \rightarrow (0, 1, 1)\\$
-$N + 4 = 1_{3}|0_{2}|0_{2} \rightarrow (1, 0, 0)\\$
-$N + 5 = 1_{3}|0_{2}|1_{2} \rightarrow (1, 0, 1)\\$
-$N+ 6 = 1_{3}|1_{2}|0_{2} \rightarrow (1, 1, 0)\\$
-$N + 7 = 1_{3}|1_{2}|1_{2} \rightarrow (1, 1, 1)\\$
-$N + 8 = 2_{3}|0_{2}|0_{2} \rightarrow (2, 0, 0)\\$
-$N + 9 = 2_{3}|0_{2}|1_{2} \rightarrow (2, 0, 1)\\$
-$N + 10 = 2_{3}|1_{2}|0_{2} \rightarrow (2, 1, 0)\\$
-$N + 11 = 2_{3}|1_{2}|1_{2} \rightarrow (2, 1, 1)\\$
-
+$$
+\begin{equation}
+	\begin{aligned}
+	& N = 0_{3}|0_{2}|0_{2} \rightarrow (0, 0, 0) \\
+	& N + 1 = 0_{3}|0_{2}|1_{2} \rightarrow (0, 0, 1) \\
+	& N + 2 = 0_{3}|1_{2}|0_{2} \rightarrow (0, 1, 0) \\
+	& N + 3 = 0_{3}|1_{2}|1_{2} \rightarrow (0, 1, 1) \\
+	& N + 4 = 1_{3}|0_{2}|0_{2} \rightarrow (1, 0, 0) \\
+	& N + 5 = 1_{3}|0_{2}|1_{2} \rightarrow (1, 0, 1) \\
+	& N+ 6 = 1_{3}|1_{2}|0_{2} \rightarrow (1, 1, 0) \\
+	& N + 7 = 1_{3}|1_{2}|1_{2} \rightarrow (1, 1, 1) \\
+	& N + 8 = 2_{3}|0_{2}|0_{2} \rightarrow (2, 0, 0) \\
+	& N + 9 = 2_{3}|0_{2}|1_{2} \rightarrow (2, 0, 1) \\
+	& N + 10 = 2_{3}|1_{2}|0_{2} \rightarrow (2, 1, 0) \\
+	& N + 11 = 2_{3}|1_{2}|1_{2} \rightarrow (2, 1, 1) \\
+	\end{aligned}
+\end{equation}
+$$
 
 You may notice that we stopped the iteration at $N + 11 = 2_{3}|1_{2}|1_{2} \rightarrow (2, 1, 1)$. Why did we do this? Well, if we add one more to this value, the result overflows such that we now have a new digit. In other words, $(N + 11) + 1 = 1_{3}|0_{3}|0_{2}|0_{2} \rightarrow (1, 0, 0, 0)$. Intuitively, this makes sense because the cardinality of the Cartesian product is equal to the product of the cardinalities of each constituent set. Said another way, $|T \times S \times P| = |T| * |S| * |P| = 3 * 2 * 2 = 12$. So, as we only expect the Cartesian product to contain twelve elements, the first overflow we see is a indication that we've generated all members of the product already. We can also just keep track of how many elements we've already computed, since this can easily be derived using the size of each set. This is a useful termination condition when programming.
 

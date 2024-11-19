@@ -1,7 +1,7 @@
 # Harvesting Memories: A Short Story
 
 ## 1
-This one was a beautiful, blue-haired mystic trouncing through a verdant forest. Her hair flowed in the wind with an intense, flame-like vivacity. In only the next few frames, she'd stumbled upon a bare, flat clifftop, and was looking out on the horizon.
+This one was a beautiful, blue-haired mystic prancing through a verdant forest. Her hair flowed in the wind with an intense, flame-like vivacity. In only the next few frames, she'd stumbled upon a bare, flat clifftop, and was looking out on the horizon.
 
 "I think it's right about...here," Walker chimed in. The recall-ocon kept advancing, and I saw the mystic's eyes focus, then squint to barely make out something far off to her left.
 

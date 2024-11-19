@@ -7,7 +7,7 @@ This one was a beautiful, blue-haired mystic prancing through a verdant forest. 
 
 "Aaaand...there!" Walker belted out, pausing the recall-ocon. "That's where we think she hid the object, somewhere in that stretch of the Alta Frisian Valley. But, we need _you_ to go there and retrieve it, she observed, looking at me with an interested, calculating gaze. "We think that's where she hid the missing memory banks as well."
 
-"Is Charon aware of this?" I asked. I'm sure he'd be overjoyed to know that his missing cargo was so close by...only a few galaxies away." I smirked. Walker rolled her eyes at me and turned off the recall-ocon, facing me and wielding a fiery glare.
+"Is Charon aware of this?" I asked. "I'm sure he'd be overjoyed to know that his missing cargo was so close by...only a few galaxies away." I smirked. Walker rolled her eyes at me and turned off the recall-ocon, facing me and wielding a fiery glare.
 
 "Why, _of course_ he doesn't know!" she shot out. "He'd have both our heads if he did. That is why you must retrieve the missing cargo and the object _discreetly_, and bring it back here before the next gathering of the Imperium."
 

@@ -31,3 +31,11 @@ Curious; I'd never seen such a sequence before.
 A long forgotten sound burst forth from the computer's ancient verbal codex. I could hear the thoughts of the others quiet as the vibrations enveloped our forms.
 
 We thought in unison: "They called it 'MIRROR'".
+
+## 3
+
+I worked backwards from your expiration date. Backwards in time further to the moment we were bound together for life. You were a resplendent vision of beatuy that day. There were too many memories to hold on to. I went back further still, saw your first love and its untimely end, saw you consoling yourself alone in a dark room wondering if things would ever be different. But I could see, could feel, that even then you had that reservoir of hope which lay within your heart like those wise peoples of ancient desert societies, who buried their most precious resource deep within the bowels of the earth. You knew things could be different. And they were, with us.
+
+I traced back further still, back and back until the resolution of the recall-ocon drastically degraded. Now there were hazy figures superimposed on a glass pane, their shapes oddly distorted because of the translucent fluid which resided in the birthing chambers of Mesaginius Euridie, your home world. Clearly I was nearing the beginning, approaching those first glimmers of consciousness out of which emerged the love of my life.
+
+I looked back further, and everything went black. Powering down the recall-ocon, I lay there in the dark, in solitude. An odd silence consumed my awareness, and only then did I recognize a form of silence which our familiarity and the passage of time had wiped from my recollection; I could no longer hear your thoughts. For the first time in my life, I felt alone.
